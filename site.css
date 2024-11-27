@@ -47,3 +47,15 @@ nav{
    font-size: 1.5rem;
    font-weight:lighter;
 }
+#get_start{
+   color:#eddd9e;
+   border: 1px solid black;
+   border-radius: 1rem;
+   display: flex;
+   flex-wrap: wrap;
+   width: 190px;
+   justify-content: center;
+   background-color: #191913;
+    border-style: hidden;
+    box-shadow: 0 0 1rem rgba(0, 0, 0,0.4);;
+}
