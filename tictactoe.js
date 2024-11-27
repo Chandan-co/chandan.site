@@ -54,7 +54,7 @@ boxes.forEach((box)=>{
         box.disabled=true;
         count++;
        let isWinner= checkWinner();
-        if(count === 10 &&!isWinner){draws()}
+        if(count === 9 &&!isWinner){draws()}
     })
 });
 const showWinner=(winner)=>{
