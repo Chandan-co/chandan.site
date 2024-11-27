@@ -53,9 +53,12 @@ nav{
    border-radius: 1rem;
    display: flex;
    flex-wrap: wrap;
-   width: 190px;
+   width: 190px; 
+   padding: 1rem;
+   font-size: 1.25rem;
+   background-color: #191913;
+   border: none;
    justify-content: center;
    background-color: #191913;
-    border-style: hidden;
     box-shadow: 0 0 1rem rgba(0, 0, 0,0.4);;
 }
