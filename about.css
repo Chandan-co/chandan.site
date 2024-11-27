@@ -1,3 +1,10 @@
-.para{
-    text-decoration: ;
+
+#copy{
+    text-align: center;
+    margin-top: 200px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+#author{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.5rem;
 }
