@@ -1,64 +1,81 @@
-*{
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
-   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+main{
+   top: 0;
+   right:0;
 
 }
-nav{
-   height: 80px;
-   background-color: rgb(237, 221, 156);
-   display: flex;
-   justify-content:space-between;
-   align-items: center;
-   padding: 0rem calc((100vw - 1300px)/2);
+body{
+   padding: 0;
+   margin: 0;
+  
+   background-color:#f0f7d4;
+   background-size: cover;
+   backdrop-filter: blur(25px);
 }
-.logo{
-   color: black;
-   width: 20%;
-   height:20px;
-   align-items: center;
+nav{
+   height: 110px;
+   width:100%;
+   margin: auto;
+   border: 1px solid;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  background-color:#092834;
+}.nav_items{
+   margin-right: 20px;
+   gap: 20px;
+   border:none;
+   font-size: 1.5rem;
+   word-spacing: 1.5rem;
+
+}#logo{
+   border:none;
+   height: 70%;
    justify-content: center;
-   margin-top: 40px;
-   font-size: 3rem;
-   font-style: italic;
-   padding: 2rem ;
+   width:20%;
+   padding: 1rem;
 }
 .logo_img{
-      margin-top:-70px ;
-      margin-left: -50px;
-      width: 300px;
-      height: 90px;
+   height: 110%;
+   width:70%;
+   justify-content: center;
+   border: 1px solid;
+   border-radius: 1rem;
+   align-items: center;
 }
-.hero{
-   background-color: rgb(237, 221, 158);
-}
-.hero-container{
-   display: grid;
-   grid-template-columns: 1fr 1fr;
-   height: 95vh;
-   padding: 3rem calc((100vw - 1300px)/2) ;
-}
-.column-left{
-   justify-content:space-between;
-   margin-top: 60px;
-   font-style: oblique;
-   padding: 0;
-   font-size: 1.5rem;
-   font-weight:lighter;
+#heading{
+   text-shadow: 0 0 1rem rgba(0,0, 0,0.4);
+   border:none;
+   font-family:"Poppins",sans-serif;
+   font-size: larger;
+   font-weight:bolder;
+   margin-left:20px;
+}#image{
+   justify-content: center;
+   border:none;
+   border-radius: 1.5rem;
+   align-items: center;
+}#image_div{
+   border:none;
+   justify-content: center;
+   display: flex;
+   align-items: center;
+   
+}.button{
+   display: flex;
+   color: #f0f7d4;
+   justify-content: center;
+   margin-top: 1rem;
 }
 #get_start{
-   color:#eddd9e;
-   border: 1px solid black;
+   color:#f0f7d4;
    border-radius: 1rem;
    display: flex;
    flex-wrap: wrap;
    width: 190px; 
    padding: 1rem;
    font-size: 1.25rem;
-   background-color: #191913;
    border: none;
    justify-content: center;
-   background-color: #191913;
+   background-color:#092834;
     box-shadow: 0 0 1rem rgba(0, 0, 0,0.4);;
 }
