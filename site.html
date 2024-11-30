@@ -5,35 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1518/1518963.png">
     <link rel="stylesheet" href="site.css">
 </head>
 <body>
-    <nav>
-        <div class="logo"> <a href="https://chandan-co.github.io/chandan.site/site.html"><img class="logo_img"src="https://chandan-co.github.io/chandan.site/logo_img2.png" /> </a></div>
-        <div class="nav-items">
-            <a href="https://chandan-co.github.io/chandan.site/about.html">About</a>
-            <a href="https://chandan-co.github.io/chandan.site/site.html">Home</a>
-            <a href="/contact.html">Contact</a>
-        </div>
-    </nav>
-    <section class="hero">
-        <div class="hero-container">
-            <div class="column-left">
-                <h1>Tic-Tac-Toe</h1><br>
-                <p>We are providing you the Ultimate Tic-Tac-Toe Game.<br />Rules for Tic-Tac-Toe :<ul>
-                    <li>The game is played on a <b>3x3 grid</b> </li><br>
+    <main>
+        <nav class="navigation">
+            <div id="logo">
+               <a href="/DOM/site.html"><img  class="logo_img"src="/PICS/Waves.jpg"></a> 
+            </div>
+            <div class="nav_items"><a  href="/about.html">About</a>
+                <a href="/contact.html">Contact</a>
+            </div>
+        </nav>
+        <section class="container">
+            <div id="heading">
+                <h1>Welcome to the GAME of TIC-TAC-TOE!</h1>
+                <p id="Salutation">We are providing you the ULTIMATE Game of<b>TIC-TAC-TOE</b>.Please have a play=> </p>
+                <p id="ruleHead">Rules for TIC-TAC-TOE:</p>
+                <p id="rules"><ol>
+                    <li>The game is played on a <b>3x3 grid</b></li><br>
                     <li>Players take turns marking empty spaces with an X or O </li><br>
                     <li>The first player to get three marks in a row (up, down, across, or diagonally)<b> wins</b> </li><br>
                     <li>If all nine spaces are filled and no player has three marks in a row, the game ends in a tie or <b>Draw</b></li><br>
-                </ul></p>
-                <a href="https://chandan-co.github.io/chandan.site/tictactoe.html"<button id="get_start">GET STARTED </button></a>
+
+                </ol></p>
             </div>
-            <div class="column-right">
-                <img src="https://chandan-co.github.io/chandan.site/img.jpg"  alt="illustration"class="img"/>
+            <div id="image_div">
+                <img id="image" src="/DOM/img.jpg"/>
             </div>
-        </div>
-    </section>
-    <script src="site.js"></script>
+            <div class="button">
+                <a href="/DOM/tictactoe.html"<button id="get_start">GET STARTED </button></a>
+            </div>
+            
+        </section>
+    </main>
 </body>
 </html>
