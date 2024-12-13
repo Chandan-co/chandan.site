@@ -13,7 +13,7 @@ body{
 }
 nav{
    height: 110px;
-   width:100%;
+   width:100vh;
    margin: auto;
    border: 1px solid;
   display: flex;
@@ -29,9 +29,9 @@ nav{
 
 }#logo{
    border:none;
-   height: 70%;
+   height: 7vh;
    justify-content: center;
-   width:20%;
+   width:20vh;
    padding: 1rem;
 }
 .logo_img{
