@@ -39,10 +39,10 @@ nav{
 }
 #logo{
    border:none;
-   height: 8vh;
+   height: 12vh;
    object-fit: cover;
    justify-content: center;
-   width:20vh;
+   width:30vh;
    padding: 1rem;
 }
 .logo_img{
