@@ -1,44 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>CodePen - Panda Login Form</title>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&amp;display=swap'><link rel="stylesheet" href="/amazon/amazon.css">
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="site.css">
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div class="container">
-  <form>
-    <label for="username">Enter your username</label>
-    <input type="text" id="username" placeholder="Username" />
-    <label for="password">Enter your password</label>
-    <input type="password" id="password" placeholder="Password" />
-    <button>Login</button>
-  </form>
-  <div class="ear-l"></div>
-  <div class="ear-r"></div>
-  <div class="panda-face">
-    <div class="blush-l"></div>
-    <div class="blush-r"></div>
-    <div class="eye-l">
-      <div class="eyeball-l"></div>
-    </div>
-    <div class="eye-r">
-      <div class="eyeball-r"></div>
-    </div>
-    <div class="nose"></div>
-    <div class="mouth"></div>
-  </div>
-  <div class="hand-l"></div>
-  <div class="hand-r"></div>
-  <div class="paw-l"></div>
-  <div class="paw-r"></div>
-</div>
-<button> Shake
-</button>
-<!-- partial -->
-  <script  src="/amazon/amazon.js"></script>
+    <main>
+        <nav class="navigation">
+            <div id="logo">
+               <a href="/DOM/site.html"><img  class="logo_img"src="/PICS/Waves.jpg"></a> 
+            </div>
+            <div class="nav_items"><a  href="/about.html" class="border">About</a>
+                <a class="border" href="/contact.html">Contact</a>
+            </div>
+        </nav>
+        <section class="container">
+            <div id="heading">
+                <h1>Welcome to the GAME of TIC-TAC-TOE!</h1>
+                <p id="Salutation">We are providing you the ULTIMATE Game of<b>TIC-TAC-TOE</b>.Please have a play=> </p>
+                <p id="ruleHead">Rules for TIC-TAC-TOE:</p>
+                <p id="rules"><ol>
+                    <li>The game is played on a <b>3x3 grid</b></li><br>
+                    <li>Players take turns marking empty spaces with an X or O </li><br>
+                    <li>The first player to get three marks in a row (up, down, across, or diagonally)<b> wins</b> </li><br>
+                    <li>If all nine spaces are filled and no player has three marks in a row, the game ends in a tie or <b>Draw</b></li><br>
 
+                </ol></p>
+            </div>
+            <div id="image_div">
+                <img id="image" src="/DOM/img.jpg"/>
+            </div>
+            <div class="button">
+                <a href="/"<button id="get_start">GET STARTED </button></a>
+            </div>
+            
+        </section>
+    </main>
 </body>
 </html>
