@@ -86,13 +86,11 @@ nav{
    display: flex;
    flex-wrap: wrap;
    width: 190px; 
+   text-decoration: none;
    padding: 1rem;
    font-size: 1.25rem;
    border: none;
    justify-content: center;
    background-color:#092834;
     box-shadow: 0 0 1rem rgba(0, 0, 0,0.4);;
-}
-@media  only screen and (max-width:750px) {
-   
 }
