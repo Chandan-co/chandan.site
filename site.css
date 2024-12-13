@@ -3,6 +3,13 @@ main{
    right:0;
 
 }
+.border:hover{
+   border: 2px solid;
+   border-color: #f0f7d4;
+   border-radius: 1rem;
+   padding: 0.8rem;
+   background-color:#0b1a20;
+}
 body{
    padding: 0;
    margin: 0;
@@ -13,8 +20,7 @@ body{
 }
 nav{
    height: 110px;
-   width: 100vh;
-   margin: auto;
+   width:98.5vmax;
    border: 1px solid;
   display: flex;
   justify-content:space-between;
@@ -27,11 +33,16 @@ nav{
    font-size: 1.5rem;
    word-spacing: 1.5rem;
 
-}#logo{
+}.nav_items a{
+   text-decoration: none;
+   color: #f0f7d4;
+}
+#logo{
    border:none;
-   height: 7vh;
+   height: 8vh;
+   object-fit: cover;
    justify-content: center;
-   width: 20vh;
+   width:20vh;
    padding: 1rem;
 }
 .logo_img{
@@ -52,10 +63,13 @@ nav{
 }#image{
    justify-content: center;
    border:none;
+   max-width:100%;
    border-radius: 1.5rem;
    align-items: center;
 }#image_div{
    border:none;
+   margin-top: 20px;
+   margin-left: 8vh;
    justify-content: center;
    display: flex;
    align-items: center;
@@ -78,4 +92,7 @@ nav{
    justify-content: center;
    background-color:#092834;
     box-shadow: 0 0 1rem rgba(0, 0, 0,0.4);;
+}
+@media  only screen and (max-width:750px) {
+   
 }
