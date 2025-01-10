@@ -98,3 +98,27 @@ body {
   }
  
 }
+
+
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.controls button {
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  background-color: #6c757d;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.controls button:hover {
+  background-color: #5a6268;
+}
