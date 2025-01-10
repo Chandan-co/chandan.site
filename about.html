@@ -2,17 +2,117 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Content</title>
-    <link rel="stylesheet" href="about.css"
+    <title>WAVES|OFFICIAL</title>
+   
+    <link rel="stylesheet" href="/JAVASCRIPT/DOM/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <h1>About Author:</h1>
- <p id="author">Hello Friends!<br><br>I am <i>CHANDAN JANGIR</i>,creater of this page.<br>
-        <br>Here, I will facilitate you with various Board Games and in future,Graphic-games also.<br>So <b>Thanks for visiting us.
-        </b>
-            <p id="copy">&copy; Chandan Jangir.</p>
-        </p>
+        <nav class="navbar">
+            <div id="logo"><a href="#"><img src="/JAVASCRIPT/PICS/Waves-removebg-preview.png" alt="Waves"></a></div>
+            <a href="#" class="navLink">MY GAMES</a>
+            <a href="#" ="navLink">ABOUT</a>
+            <a href="#" class="navLink">CONTACT</a>
+            <form class="search">
+                <input type="text" placeholder=":; Under_process :;" class="search__input" />
+                <button type="button" class="search__button">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </form>
+              
+        </nav>
+        <div class="down_nav">
+            <a href="#"><i class="fa-solid fa-house"></i></a>
+            <a href="#"><i class="fa-light fa-envelope"></i></a>
+            <a href="#"><i class="fa-regular fa-heart"></i></a>
+        </div>
+
+    
+        
+          <div class="page">
+            <div id="mySidenav" class="sidenav">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+              <a href="#tictactoe">TIC TAC TOE</a>
+              <a href="#memorygame">MEMORY GAME</a>
+              <a href="#snakeio">SNAKE IO</a>
+              <a href="#age">AGE CALCULATOR</a>
+              <a href="#quiz">QUIZ OPERATOR</a>
+              <a href="#calculator">CALCULATOR</a>
+            </div>
+            
+            <!-- Use any element to open the sidenav -->
+            <span onclick="openNav()" class="open_bars"><i class="fa-solid fa-bars"></i></span>
+            
+            <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+            <div id="main">
+              
+            </div>
+            <div class="gamelinksBox left_gamebar">
+
+
+              <div class="game" >
+                <a href="/JAVASCRIPT/DOM/tictactoe.html">TIC TAC TOE</a>
+                <div id="tictactoe" class="game_img"><a href="/JAVASCRIPT/DOM/tictactoe.html"><img src="/JAVASCRIPT/PICS/tictactoe.png" alt="tic tac toe game_image" ></a></div>
+              </div>
+              <div class="game game2">
+                <a href="/JAVASCRIPT/DOM/memory.html">MEMORY GAME</a>
+                <div id="memorygame" class="game_img"><a href="/JAVASCRIPT/DOM/memory.html"><img src="/JAVASCRIPT/PICS/memory (2).png" alt="MEMORYGAME_image"></a></div>
+            </div>
+              <div class="game">
+                <a href="/JAVASCRIPT/DOM/snake.html">SNAKE.IO</a>
+                <p style="font-size:x-small;">Can be played only on keyboard device</p>
+                <div id="snakeio" class="game_img"><a href="/JAVASCRIPT/DOM/snake.html"><img src="/JAVASCRIPT/PICS/snake.png" alt="snakegame_image"></a></div>
+              </div>
+              <div class="game">
+                <a href="/JAVASCRIPT/DOM/age_calculator.html">AGE CALCULATOR</a>
+                <div id="age" class="game_img"><a href="/JAVASCRIPT/DOM/age_calculator.html"><img src="/JAVASCRIPT/PICS/age.png" alt="Age calculator_image"></a></div>
+              </div>
+              <div class="game">
+                <a href="/JAVASCRIPT/DOM/quiz.html">QUIZ OPERATOR</a>
+                <div id="quiz" class="game_img"><a href="/JAVASCRIPT/DOM/quiz.html"><img src="/JAVASCRIPT/PICS/quiz.png" alt="quizgame_image"></a></div>
+              </div>
+              <div class="game">
+                <a href="/JAVASCRIPT/DOM/calculator.html">CALCULATOR</a>
+                <div id="calculator" class="game_img"><a href="/JAVASCRIPT/DOM/calculator.html"><img src="/JAVASCRIPT/PICS/calcu.png" alt="Calculator_image"></a></div>
+              </div>
+
+
+            </div>
+          </div>
+
+
+  
+
+        <footer>
+            <!--This is a FeedbackBox-->
+            <div class="contact_container">
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact_form">
+                     <h2>Get in Touch</h2>
+                    <input type="hidden" name="access_key" value="50be6613-eecc-4b66-9071-0b620ce657f9">
+                    <input type="text" name="name" placeholder="Your Name" class="contact_inputs" required>
+                    <input type="email" name="email" placeholder="Your Email" class="contact_inputs" required>
+                    <textarea name="message" placeholder="Your Feedback" class="contact_inputs" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+          <div id="footer_note"><p> &copy; CHANDAN JANGIR</p></div>
+        </footer>
+
+         <!-- 
+    - #CUSTOM CURSOR
+  -->
+
+  <div class="cursor" data-cursor></div>
+
+   <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <i class="fa-regular fa-circle-up"></i>
+  </a>
+
+        <script src="/JAVASCRIPT/DOM/about.js"></script>
 </body>
 </html>
