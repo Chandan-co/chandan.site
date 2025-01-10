@@ -1,7 +1,7 @@
 const playBoard = document.querySelector(".play-board");
 const scoreElement = document.querySelector(".score");
 const highScoreElement = document.querySelector(".high-score");
-const controls = document.querySelectorAll(".controls i");
+const controlButtons = document.querySelectorAll(".controls button");
 
 let gameOver = false;
 let foodX, foodY;
@@ -45,8 +45,8 @@ const changeDirection = e => {
     }
 }
 
-// Calling changeDirection on each key click and passing key dataset value as an object
-controls.forEach(button => button.addEventListener("click", () => changeDirection({ key: button.dataset.key })));
+// Calling changeDirection on each button click and passing key dataset value as an object
+controlButtons.forEach(button => button.addEventListener("click", () => changeDirection({ key: button.dataset.key })));
 
 const initGame = () => {
     if(gameOver) return handleGameOver();
@@ -65,6 +65,19 @@ const initGame = () => {
     // Updating the snake's head position based on the current velocity
     snakeX += velocityX;
     snakeY += velocityY;
+
+    // Wrapping the snake position when it hits the walls
+    if (snakeX <= 0) {
+        snakeX = 30;
+    } else if (snakeX > 30) {
+        snakeX = 1;
+    }
+
+    if (snakeY <= 0) {
+        snakeY = 30;
+    } else if (snakeY > 30) {
+        snakeY = 1;
+    }
     
     // Shifting forward the values of the elements in the snake body by one
     for (let i = snakeBody.length - 1; i > 0; i--) {
