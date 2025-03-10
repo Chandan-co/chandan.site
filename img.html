@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Simple Image Editor</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <style>
+        .nav-header {
+            font-size: 1.5rem;
+        }
+        
+        .row {
+            margin-bottom: 0;
+        }
+        
+        #sourceImage, .image-controls, .image-save, .preset-filters {
+            display: none;
+        }
+        
+        .image-preview {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        #canvas {
+            max-width: 100%;
+            max-height: 420px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="green">
+        <div class="nav-wrapper container">
+            <span class="nav-header">Simple Image Filters</span>
+            <ul class="right image-save">
+                <button class="btn btn-flat blue white-text" onclick="saveImage()">Save</button>
+                <button class="btn btn-flat red white-text" onclick="resetImage()">Reset</button>
+            </ul>
+        </div>
+    </nav>
+
+    <img id="sourceImage" crossorigin="anonymous">
+
+    <div class="image-preview">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <div class="container app">
+        <div class="help-text center-align">
+            <h5>Please Upload an Image to Start Editing</h5>
+        </div>
+
+        <div class="image-controls">
+            <h6>Image Controls</h6>
+            <div class="row">
+                <div class="col s6">
+                    <span class="range-field">
+                        <label>Brightness</label>
+                        <input id="brightnessSlider" type="range" value="100" min="0" max="300" onchange="applyFilter()">
+                    </span>
+                </div>
+                <div class="col s6">
+                    <span class="range-field">
+                        <label>Contrast</label>
+                        <input id="contrastSlider" type="range" value="100" min="0" max="200" onchange="applyFilter()">
+                    </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s6">
+                    <span class="range-field">
+                        <label>Grayscale</label>
+                        <input id="grayscaleSlider" type="range" value="0" min="0" max="100" onchange="applyFilter()">
+                    </span>
+                </div>
+                <div class="col s6">
+                    <span class="range-field">
+                        <label>Saturation</label>
+                        <input id="saturationSlider" type="range" value="100" min="0" max="300" onchange="applyFilter()">
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="preset-filters">
+            <h6>Preset Filters</h6>
+            <button class="btn green" onclick="brightenFilter()">Brighten</button>
+            <button class="btn green" onclick="bwFilter()">Black & White</button>
+            <button class="btn green" onclick="funkyFilter()">Funky</button>
+            <button class="btn green" onclick="vintageFilter()">Vintage</button>
+        </div>
+
+        <div class="file-controls">
+            <h6>File Controls</h6>
+            <a id="link"></a>
+            <div class="file-field input-field">
+                <div class="btn green">
+                    <span>Upload Image</span>
+                    <input type="file" accept="image/*" onchange="uploadImage(event)">
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path" type="text">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let image = document.getElementById('sourceImage');
+        let canvas = document.getElementById('canvas');
+        let context = canvas.getContext('2d');
+
+        function uploadImage(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                image.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+
+            image.onload = function () {
+                canvas.width = image.width;
+                canvas.height = image.height;
+                context.drawImage(image, 0, 0, canvas.width, canvas.height);
+
+                document.querySelector(".help-text").style.display = "none";
+                document.querySelector(".image-controls").style.display = "block";
+                document.querySelector(".image-save").style.display = "flex";
+                document.querySelector(".preset-filters").style.display = "block";
+            };
+        }
+
+        function applyFilter() {
+            let brightness = document.getElementById("brightnessSlider").value;
+            let contrast = document.getElementById("contrastSlider").value;
+            let grayscale = document.getElementById("grayscaleSlider").value;
+            let saturation = document.getElementById("saturationSlider").value;
+
+            context.filter = `brightness(${brightness}%) contrast(${contrast}%) grayscale(${grayscale}%) saturate(${saturation}%)`;
+            context.drawImage(image, 0, 0, canvas.width, canvas.height);
+        }
+
+        function brightenFilter() {
+            document.getElementById("brightnessSlider").value = "200";
+            applyFilter();
+        }
+
+        function bwFilter() {
+            document.getElementById("grayscaleSlider").value = "100";
+            applyFilter();
+        }
+
+        function funkyFilter() {
+            document.getElementById("contrastSlider").value = "150";
+            document.getElementById("saturationSlider").value = "250";
+            applyFilter();
+        }
+
+        function vintageFilter() {
+            document.getElementById("sepiaSlider").value = "80";
+            applyFilter();
+        }
+
+        function saveImage() {
+            let link = document.getElementById('link');
+            link.setAttribute('download', 'edited-image.png');
+            link.setAttribute('href', canvas.toDataURL("image/png").replace("image/png", "image/octet-stream"));
+            link.click();
+        }
+
+        function resetImage() {
+            context.drawImage(image, 0, 0, canvas.width, canvas.height);
+            document.getElementById("brightnessSlider").value = "100";
+            document.getElementById("contrastSlider").value = "100";
+            document.getElementById("grayscaleSlider").value = "0";
+            document.getElementById("saturationSlider").value = "100";
+            applyFilter();
+        }
+    </script>
+</body>
+
+</html>
