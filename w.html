@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Control</title>
+    <link rel="stylesheet" href="w.css">
+</head>
+<body>
+    <header>
+        <h1>Weather Control Application</h1>
+    </header>
+    <main>
+        <section id="weather-controls">
+            <h2>Select Weather</h2>
+            <button onclick="changeWeather('sunny')">Sunny</button>
+            <button onclick="changeWeather('rainy')">Rainy</button>
+            <button onclick="changeWeather('snowy')">Snowy</button>
+        </section>
+        <section id="weather-display">
+            <div id="weather-effect"></div>
+        </section>
+    </main>
+    <script src="w.js"></script>
+</body>
+</html>

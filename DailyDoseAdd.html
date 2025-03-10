@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Dose Maths Practice</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px  rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+        }
+        .container h1{
+            margin-bottom: 10px;
+            font-family: cursive;
+        }
+        .M-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .numbers {
+            background-color: #e0e0e0;
+            height: 80px;
+            width: 180px;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 3rem;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            cursor: default;
+        }
+
+
+        .M-box .ans {
+            height: 60px;
+            width: 200px;
+            font-size: 2rem;
+            font-family: cursive;
+            text-align: center;
+            border-radius: 10px;
+            outline:#28a745;
+            padding: 10px;
+        }
+
+        .ans::placeholder{
+            font-size:1.5rem;
+        }
+        .M-box .ans:focus {
+            border-color: #007bff;
+            
+        }
+        .colorchange1{
+            border-color:green ;
+        }
+        .colorchange2{
+            border-color:red ;
+        }
+        .M-box #submit {
+            height: 50px;
+            width: 130px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .M-box #submit:hover {
+            background-color: #0056b3;
+        }
+
+        .feedback {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .feedback i {
+            font-size: 2.5rem;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+            
+        }
+
+        .feedback .fas1 {
+            color: #28a74649;
+            filter: brightness(1);
+        }
+
+        .feedback .fas2 {
+            color: #dc35464d;
+            filter: brightness(1);
+        }
+
+        .feedback .showtrue {
+            opacity: 1;
+            color: green;
+            filter: brightness(2);
+        }
+        .feedback .showfalse {
+            opacity: 1;
+            color: red;
+            filter: brightness(2);
+        }
+
+        @media (max-width: 480px) {
+            .numbers {
+                width: 140px;
+                font-size: 2rem;
+            }
+
+            .M-box .ans {
+                width: 160px;
+                font-size: 1.8rem;
+            }
+
+            .M-box #submit {
+                width: 110px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container"><h1>Multiplication Hub</h1>
+        
+        <div class="M-box">
+            <input type="button" class="numbers" id="Mno1" readonly>
+            <icon>➕</icon>
+            <input type="button" class="numbers" id="Mno2" readonly>
+            <icon id="checker">⏬</icon>
+            <input type="number" id="ans" class="ans" placeholder="Your Answer">
+            <div class="feedback">
+                <i class="fas1">🔴</i>
+                <i class="fas2">🔴</i>
+            </div>
+            <button type="submit" id="submit">Submit</button>
+            <button class="nextbtn" id="nextbtn">Next</button>
+        </div>
+    </div>
+
+    <script >
+       const Num1 = document.getElementById("Mno1");
+        const Num2 = document.getElementById("Mno2");
+        const submitBtn = document.getElementById("submit");
+        const answer = document.getElementById("ans");
+        const feedbackIcons = document.querySelectorAll(".feedback i");
+        const nextbtn = document.getElementById("nextbtn");
+
+        let randNum1 = Math.floor(Math.random() * 999);
+        let randNum2 = Math.floor(Math.random() * 999);
+
+        const init = () => {
+            Num1.value = randNum1;
+            Num2.value = randNum2;
+        };
+        init();
+let score
+        const checkSol = () => {
+            const sol = randNum1 + randNum2;
+            feedbackIcons.forEach(icon => icon.classList.remove("show"));
+
+            if (answer.value == sol) {
+                answer.classList.add("colorchange1");
+                answer.classList.remove("colorchange2");
+                feedbackIcons[0].classList.add("showtrue");
+                feedbackIcons[1].classList.remove("showfalse");
+            } else {
+                answer.classList.add("colorchange2");
+                answer.classList.remove("colorchange1");
+                feedbackIcons[0].classList.remove("showtrue");
+                feedbackIcons[1].classList.add("showfalse");
+            }
+        };
+
+        submitBtn.addEventListener("click", checkSol);
+        submitBtn.addEventListener("enter", checkSol);
+        nextbtn.onclick = ()=>{
+            window.location.reload(); //reload the current window
+        }
+    </script>
+</body>
+</html>
+    </script>
+</body>
+</html>

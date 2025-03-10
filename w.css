@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+}
+
+main {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+#weather-display {
+    margin-top: 20px;
+    height: 300px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+#weather-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.sunny {
+    background-color: #ffd9003d; /* Yellowish background */
+}
+
+.rainy {
+    background-color: #4682B4;
+}
+
+.snowy {
+    background-color: #E0FFFF;
+}
+
+.rain {
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    background-color: #00BFFF;
+    animation: rain 0.5s linear infinite;
+}
+
+.snow {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: snow 5s linear infinite;
+}
+
+.sun {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url('sun.png') no-repeat center center;
+    background-size: contain;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@keyframes rain {
+    0% { top: -10px; }
+    100% { top: 100%; }
+}
+
+@keyframes snow {
+    0% { top: -5px; }
+    100% { top: 100%; }
+}

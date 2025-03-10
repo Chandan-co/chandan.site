@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Dose Maths Practice</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #2c3e50, #4ca1af);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .container h1 {
+            margin-bottom: 20px;
+            font-family: cursive, sans-serif;
+            color: #47bcce;
+            letter-spacing: 0.18rem;
+        }
+
+        .M-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .numbers {
+            background: #fff;
+            height: 80px;
+            width: 180px;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 3rem;
+            border-radius: 10px;
+            border: 2px solid #4ca1af;
+            outline: none;
+            cursor: default;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .numbers:hover {
+            transform: scale(1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .M-box .ans {
+            height: 60px;
+            width: 200px;
+            font-size: 2rem;
+            font-family: 'Cursive', sans-serif;
+            text-align: center;
+            border-radius: 10px;
+            outline: #28a745;
+            padding: 10px;
+            border: 2px solid #4ca1af;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .ans::placeholder {
+            font-size: 1.5rem;
+        }
+
+        .M-box .ans:focus {
+            border-color: #007bff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transform: scale(1.05);
+        }
+
+        .M-box #submit, .M-box #nextbtn {
+            height: 50px;
+            width: 150px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 10px;
+            background-color: #4ca1af;
+            color: #ffffff;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .M-box #submit:hover, .M-box #nextbtn:hover {
+            background-color: #3b8d99;
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .feedback {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .feedback i {
+            font-size: 2.5rem;
+            opacity: 0.7;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .feedback .fas1 {
+            color: #28a74649;
+        }
+
+        .feedback .fas2 {
+            color: #dc35464d;
+        }
+
+        .feedback .showtrue {
+            opacity: 1;
+            color: green;
+            transform: scale(1.2);
+        }
+
+        .feedback .showfalse {
+            opacity: 1;
+            color: red;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 480px) {
+            .numbers {
+                width: 140px;
+                font-size: 2rem;
+            }
+
+            .M-box .ans {
+                width: 160px;
+                font-size: 1.8rem;
+            }
+
+            .M-box #submit, .M-box #nextbtn {
+                width: 130px;
+                font-size: 1rem;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+        }.scorecard{
+            position: absolute;
+            height: 60px;
+            width: 100px;
+            top: 50%;
+            transform: translate(0,-50%);
+            left: 20px;
+            background-color:#3b8d99 ;
+            border-radius: 0.8rem;
+            text-align: center;
+            font: 700;
+            font-family: cursive;
+            font-size: larger;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Multiplication Hub</h1>
+
+        <div class="M-box">
+            <input type="button" class="numbers" id="Mno1" readonly>
+            <icon>✖</icon>
+            <input type="button" class="numbers" id="Mno2" readonly>
+            <icon id="checker">⏬</icon>
+            <input type="number" id="ans" class="ans" placeholder="Your Answer">
+            <div class="feedback">
+                <i class="fas1">🔴</i>
+                <i class="fas2">🔴</i>
+            </div>
+            <button type="submit" id="submit">Submit</button>
+            <button class="nextbtn" id="nextbtn">Next</button>
+            <div class="scorecard" id="scorecard">Scorecard</div>
+        </div>
+    </div>
+
+    <script src="DailyDose.js"></script>
+</body>
+</html>

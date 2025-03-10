@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAVES|OFFICIAL</title>
+   
+    <link rel="stylesheet" href="/JAVASCRIPT/DOM/WAVES.css">
+    <link rel="stylesheet" href="/JAVASCRIPT/DOM/bdy.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+        <nav class="navbar">
+            <a href="#" id="logoBox"></a>
+      
+
+            <a href="#" class="navLink">MY GAMES</a>
+            <a href="#" ="navLink">ABOUT</a>
+            <a href="#" class="navLink">CONTACT</a>
+            <form class="search">
+                <input type="text" placeholder=" Under_process " class="search__input" />
+                <button type="button" class="search__button">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </form>
+              
+        </nav>
+        <div class="down_nav">
+          <!-- Use any element to open the sidenav 
+          here I placed these bars in down nav-->
+  
+         <span onclick="openNav()" class="open_bars"><i class="fa-solid fa-bars"></i></span>
+
+
+            <a href="#"><i class="fa-solid fa-house"></i></a>
+            <a href="#"><i class="fa-regular fa-heart"></i></a>
+        </div>
+
+       
+
+
+          <!--PAGE START 
+          page start 
+        page start-->
+
+
+          <div class="page">
+
+             <!--sIDENAV
+           sidenav
+           sidenav 
+          sidenav-->
+
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <h2>Applications <br></h2>
+          <hr style="border-color:#818181;margin-top: 5px;">
+          <a href="#tictactoe">TIC TAC TOE</a>
+          <hr>
+          <a href="#memorygame">MEMORY GAME</a>
+          <hr >
+          <a href="#snakeio">SNAKE IO</a>
+          <hr>
+          <a href="#age">AGE CALCULATOR</a>
+          <hr >
+          <a href="#quiz">QUIZ OPERATOR</a>
+          <hr >
+          <a href="#calculator">CALCULATOR</a>
+          <hr >
+        </div>
+ 
+         
+          
+         <!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+ 
+         <div id="main">
+        </div>
+
+
+        <!--sidenav-end 
+          sidenav-end-->
+           
+          <!--GAME AREA BEGINS
+            game area begins-->
+          <div class="game_area">
+
+            <h1 id="gameareaHeading">WAVES Applications</h1>
+
+             <!--1st-->
+             <div class="container" id="quiz">
+              <div class="box" style="--clr:#007bff;">
+                  <div class="content">
+                      <div class="icon icon1"></div>
+                      <div class="text">
+                          <h3>WAVES Quiz Operator</h3>
+                          <p>Quizzes play a pivotal role in higher education by enhancing student engagement, promoting active learning, and reinforcing retention of key concepts.</p>
+                          <a href="./quiz.html">Test</a>
+                      </div>
+                  </div>
+          </div>
+        </div>
+         <!--2nd-->
+            <div class="container" id="tictactoe">
+            <div class="box" style="--clr: #548687;">
+              <div class="content">
+                  <div class="icon icon2"></div>
+                  <div class="text">
+                      <h3>Tic Tac Toe</h3>
+                      <p></p>
+                      <a href="./tictactoe.html">Play</a>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+        <!--3rd-->
+
+        <div class="container" id="age">
+            <div class="box" style="--clr:#5b98eb;">
+              <div class="content">
+                  <div class="icon icon3"></div>
+                  <div class="text">
+                      <h3>WAVES Age Calculator</h3>
+                      <p></p>
+                      <a href="./age_calculator.html">Use</a>
+                  </div>
+              </div>
+          </div>
+      </div> 
+
+      <!--4th-->
+      <div class="container" id="calculator">
+        <div class="box" style="--clr:#edf1f4;">
+          <div class="content">
+              <div class="icon icon4"></div>
+              <div class="text">
+                  <h3>WAVES Calculator</h3>
+                  <p></p>
+                  <a href="./calculator.html">Use</a>
+              </div>
+          </div>
+      </div>
+  </div> 
+
+    <!--5th-->
+  <div class="container" id="memorygame">
+    <div class="box" style="--clr:#6563FF;">
+      <div class="content">
+          <div class="icon icon5"></div>
+          <div class="text">
+              <h3>Memory Game</h3>
+              <p></p>
+              <a href="./memory.html">Play</a>
+          </div>
+      </div>
+  </div>
+</div> 
+
+ <!--6th-->
+  <div class="container" id="snakeio">
+    <div class="box" style="--clr:#B8C6DC;">
+      <div class="content">
+          <div class="icon icon6"></div>
+          <div class="text">
+              <h3>Snake IO</h3>
+              <p></p>
+              <a href="./snake.html">Play</a>
+          </div>
+      </div>
+  </div>
+</div> 
+          </div>
+
+          
+
+               <!--game area ends-->
+          </div>
+            
+<!--page area ends 
+  page area ends-->
+
+          <footer>
+            <!--This is a FeedbackBox-->
+            <div class="contact_container">
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact_form">
+                     <h2>Get in Touch</h2>
+                    <input type="hidden" name="access_key" value="50be6613-eecc-4b66-9071-0b620ce657f9">
+                    <input type="text" name="name" placeholder="Your Name" class="contact_inputs" required>
+                    <input type="email" name="email" placeholder="Your Email" class="contact_inputs" required>
+                    <textarea name="message" placeholder="Your Feedback" class="contact_inputs" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+          <div id="footer_note"><p> &copy; CHANDAN JANGIR</p></div>
+        </footer>
+
+        
+
+         <!-- 
+    - #CUSTOM CURSOR
+  -->
+
+  <div class="cursor" data-cursor></div>
+
+   <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <i class="fa-regular fa-circle-up" style="color: black; text-decoration: none;font-size: 1.6rem;"></i>
+  </a>
+
+        <script src="/JAVASCRIPT/DOM/WAVES.js"></script>
+</body>
+</html>

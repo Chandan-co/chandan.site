@@ -15,13 +15,7 @@ body{
     color: #fff;
     background: #007bff;
 }
-#logo{
-    color:#fff;
-    text-align: center;
-    position: relative;
-    top: 50px;
 
-}
 .start_btn,
 .info_box,
 .quiz_box,
@@ -56,7 +50,7 @@ body{
 }
 
 .info_box{
-    width: 500px;
+    width: 540px;
     background: #fff;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
@@ -64,6 +58,7 @@ body{
     pointer-events: none;
     transition: all 0.3s ease;
 }
+
 .info_box .info-title{
     height: 60px;
     width: 100%;
@@ -113,7 +108,7 @@ body{
 }
 
 .quiz_box{
-    width: 555px;
+    width: 550px;
     background: #fff;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
@@ -121,12 +116,13 @@ body{
     pointer-events: none;
     transition: all 0.3s ease;
 }
-@media only screen and (max-width:500px) {
-    .quiz_box{
-        width: 97vw;
-    }
+@media only screen and (max-width:572px){
+    .quiz_box{width: 100%;}
     .info_box{
-        width: 97vw;
+        width: 100%;
+    }
+    .quiz_box header .time_line{
+        opacity: 0;
     }
 }
 .quiz_box header{

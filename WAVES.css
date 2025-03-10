@@ -1,0 +1,504 @@
+:root {
+ /* ===== Colors ===== */
+ --body-color: #e4e9f7;
+ --sidebar-color: #fff;
+ --primary-color: #dc143c;
+ --primary-color-light: #f6f5ff;
+ --toggle-color: #ddd;
+ --text-color: #707070;
+
+ /* ====== Transition ====== */
+ --tran-03: all 0.2s ease;
+ --tran-03: all 0.3s ease;
+ --tran-04: all 0.3s ease;
+ --tran-05: all 0.3s ease;
+    /**
+     * COLORS
+     */
+  
+    /* background color */
+    --bg-purple: hsla(267, 100%, 63%, 1);
+    --bg-purple-alpha-30: hsla(267, 100%, 63%, 0.3);
+    --bg-dark-purple: hsla(279, 42%, 9%, 1);
+    --bg-oxford-blue: hsla(240, 63%, 13%, 1);
+    --bg-oxford-blue-alpha-95: hsla(240, 63%, 13%, 0.95);
+    --bg-oxford-blue-alpha-90: hsla(240, 63%, 13%, 0.9);
+    --bg-oxford-blue-alpha-80: hsla(240, 63%, 13%, 0.8);
+  
+    /* gradient color */
+    --gradient-1: linear-gradient(to right bottom, hsl(299, 100%, 52%), hsl(291, 100%, 58%), hsl(283, 100%, 60%), hsl(273, 100%, 62%), hsl(262, 100%, 63%), hsl(242, 100%, 69%), hsl(223, 100%, 62%), hsl(210, 100%, 50%), hsl(203, 100%, 50%), hsl(198, 100%, 50%), hsl(192, 100%, 48%), hsl(185, 90%, 48%));
+    --gradient-2: linear-gradient(90deg, transparent 0%, #9841ff 50%, transparent 100%);
+  
+    /* text color */
+    --text-white: hsla(0, 0%, 100%, 1);
+    --text-gainsboro: hsla(0, 0%, 87%, 1);
+    --text-champagne-pink: hsla(23, 61%, 86%, 1);
+    --text-purple: hsla(267, 100%, 63%, 1);
+  
+    /* border color */
+    --border-space-cadet: hsl(240, 45%, 17%);
+    --border-purple-alpha-30: hsla(267, 100%, 63%, 0.3); 
+  
+    /**
+     * TYPOGRAPHY
+     */
+  
+    /* font family */
+    --fontFamily-oxanium: 'Oxanium', cursive;
+    --fontFamily-work-sans: 'Work Sans', sans-serif;
+  
+    /* font size */
+    --fontSize-1: 3.6rem;
+    --fontSize-2: 2.4rem;
+    --fontSize-3: 2rem;
+    --fontSize-4: 1.7rem;
+    --fontSize-5: 1.6rem;
+    --fontSize-6: 1.5rem;
+    --fontSize-7: 1.4rem;
+    --fontSize-8: 1.2rem;
+  
+    /* font weight */
+    --weight-regular: 400;
+    --weight-semiBold: 600;
+    --weight-bold: 700;
+  
+    /**
+     * SPACING
+     */
+  
+    --section-spacing: 60px;
+  
+    /**
+     * BOX SHADOW
+     */
+  
+    --shadow: 0px 2px 5px 0px hsla(0, 0%, 0%, 0.2);
+  
+    /**
+     * BORDER RADIUS
+     */
+  
+    --radius-circle: 50%;
+    --radius-5: 5px;
+    --radius-3: 3px;
+  
+    /**
+     * CLIP PATH
+     */
+  
+    --clip-path-1: polygon(0 0, 100% 0, 100% 0, 0 0);
+    --clip-path-2: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    --clip-path-3: polygon(0% 0%, 90% 0, 100% 30%, 100% 100%, 0 100%);
+    --clip-path-4: polygon(90% 0, 100% 40%, 100% 100%, 0 100%, 0 0);
+    --clip-path-5: polygon(100% 0, 100% 100%, 10% 100%, 0 60%, 0 0);
+    --clip-path-6: polygon(10% 0, 100% 0, 100% 100%, 0 100%, 0 40%);
+    --clip-path-7: polygon(100% 0, 100% 60%, 90% 100%, 0 100%, 0 0);
+    --clip-path-8: polygon(0% 0%,70% 0,100% 30%, 100% 100%, 0 100%);
+    --clip-path-9: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+  
+    /**
+     * TRANSITION
+     */
+  
+    --transition-1: 250ms ease;
+    --transition-2: 500ms ease;
+    --cubic-out: cubic-bezier(0.05, 0.83, 0.52, 0.97);
+  transition:all;
+  }
+  
+  
+  html{
+    scroll-behavior: smooth;
+  }
+
+  ::-webkit-scrollbar { width: 12px; }
+
+::-webkit-scrollbar-track { background: white }
+
+::-webkit-scrollbar-thumb { 
+    background: rgba(0, 0, 80, 0.2);
+    border-radius: 0.8rem;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color:#f6f8fc;
+    user-select:none;
+}
+.navbar{
+    height: 80px;
+    min-width: 100vh;
+    border:0.2px solid black;
+    font-family:  'Oxanium', cursive;
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,221,233,1) 100%);
+    display:flex;
+   justify-content: space-between;
+    align-items: center;
+    user-select: none;
+
+}
+.navbar a{
+    text-decoration: none;
+    color:white;
+    display: flex;
+}
+#logoBox{
+  height: 100%;
+  width: 100px;
+  border:none;
+  position:relative;
+  padding-left: 10px;
+  left: 90px;
+  background: url("/JAVASCRIPT/PICS/Waves-removebg-preview.png");
+  background-size: cover;
+  background-position: -36px;
+}
+
+@media screen and (max-width:930px) {
+  #logoBox{left:40px}
+}
+.down_nav{
+    height: 40px;
+    min-width:100vh;
+    border: none;
+    position: sticky;
+    top: 0;
+    background: linear-gradient(to left, rgba(238,174,202,1) 0%, rgba(148,221,233,1) 100%);
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    
+}
+.down_nav a{
+    margin-left: 80px;
+    text-decoration: none;
+}
+/******************
+/************************
+====sidebar===
+**********************/
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 200; /* Stay on top */
+  top: 0px; /* Stay at the top */
+  left: 0;
+  background: linear-gradient(to left, rgba(238,174,202,1) 0%, rgba(148,221,233,1) 100%); /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  user-select: none;
+}
+.open_bars{
+  position: relative;
+  left: 30px;
+  font-size: 1.3rem;
+}
+/* The navigation menu links */
+.sidenav a {
+  padding: 30px 20px 20px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color:white;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color:#818181;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0px;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.sidenav h2{
+  color:#818181;
+  text-align: center;
+   font-family: cursive;
+  padding-top: 10px;
+  position: relative;
+  left: -10px;
+}
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+::selection {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+
+
+/*************\
+***************
+****  page/home /main content *****
+***************
+/*************/
+
+
+.page{
+  height:fit-content;
+  width: 98.85vmax;
+  border:none;
+  display:inline-flex;
+  justify-content:center;
+  
+}
+
+.game_area{
+  height: fit-content;
+  width: 93%;
+  border:1px solid;
+  border-radius:2rem;
+  margin:20px 20px 20px ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#gameareaHeading{
+  color: black;
+  font-family:cursive;
+  font-size: 2.3rem;
+  padding: 20px;
+}
+
+/* .gamelinksBox{
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  width: 100vmax;
+  padding: 20px;
+} */
+/* .game{
+  height: 500px;
+  width: 100%;
+ 
+  
+  margin-top: 20px;
+  color: #9841ff;
+  font-size:2.2rem ;
+  text-transform: capitalize;
+  text-align: center;
+  font-family: cursive;
+  
+}
+.game a{
+  text-decoration: none;
+}
+.game a {
+  display:inline-flexbox;
+}
+.game_img{
+  height: 400px;
+  width: 70%;
+ 
+  position: relative;
+  left: 40px;
+  bottom: -40px;
+  border-radius: 1rem;
+  
+}
+.game_img img{
+  height:100%;
+  width: 100%;
+  border-radius: 1rem;
+}
+.right_gamebar{
+ width: 30%;
+ border: 2px solid blue;
+ 
+}
+@media only screen and (max-height:450px){
+  .right_gamebar{
+    display: none;
+  }
+} */
+
+/***************\
+*FOOTER STYLING*
+\*************/
+
+
+footer{
+    min-width: 98.5vmax;
+    height:400px;
+    display:flex;
+    flex-direction:column;
+    position:relative;
+    top: 20px;
+    bottom: 0;
+    border:none;
+    background:linear-gradient(to bottom, rgba(238,174,202,1) 0%, rgba(148,221,233,1) 100%);
+    box-shadow:  10px 10px 10px white,-10px -10px 10px  rgba(0,0,0,0.17);
+
+}
+.contact_container form{
+    height:90%;
+    width: 50%;
+    display:inline-flex;
+    flex-direction: column;
+    border:none;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    text-align: center;
+    align-items: center;
+    font-family:  'Oxanium', cursive;
+
+}
+.contact_inputs{
+    margin-top:20px ;
+    width:40%;
+    display: inline;
+    padding: 20px;
+    border:none;
+    border-radius: 0.8rem;
+}
+.contact_inputs::placeholder{
+    font-weight: 500;
+    font-family: 'Oxanium', cursive;
+}
+.contact_container form textarea{
+    background-color: #e6e6e6;
+}
+.contact_container form button{
+    height:10%;
+    width: 20%;
+    margin-top: 5%;
+    border: none;
+    border-radius: 1rem;
+    background-color: #bb83ff;
+    font-size:large;
+    font-weight: 500;
+    font-family: 'Oxanium',cursive;
+}
+#footer_note{
+   position: absolute;
+   bottom: 0;
+   left: 45%;
+   color: gray;
+   letter-spacing: 0.4em;
+}
+
+/*************\
+*
+CURSOR(CUSTOM)
+*
+\************/
+
+
+.cursor {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(74, 149, 179);
+    border-radius:50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 6;
+    transition:250ms ease;
+    transition-property: opacity, transform;
+  }
+
+  body:hover .cursor { opacity: 0.4; }
+
+  body .cursor.hovered {
+    transform: translate(-50%, -50%) scale(1.4);
+    opacity: 0.75;
+  }
+
+ 
+/*-----------------------------------*\
+  #BACK TO TOP
+\*-----------------------------------*/
+
+.back-top-btn {
+    position: fixed;
+    bottom: 10px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    display: grid;
+    place-items: center;
+    font-size: 2.1rem;
+    opacity:1 ;
+    z-index: 100;
+  }
+  
+  .back-top-btn.active {
+    opacity: 1;
+    transform: translateY(-20px);
+  }
+  
+  
+
+  /**********************
+  * search buttton*
+ ***********************/   
+ .search {
+  display: flex;
+  align-items: center;
+  background-image: var(--gradient-1);
+  color: #fff;
+  margin-right:20px; ;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #9841ff;
+}
+.search :is(input, button) {
+  background:transparent;
+  color: inherit;
+  border: none;
+  outline: none;
+}
+.search__input {
+  width: 0;
+  transition: width 0.5s;
+}
+.search__button {
+  display: grid;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  transition: color 0.25s;
+}
+.search__button:hover {
+  color: #e3e3e3;
+}
+.search:focus-within input {
+  width: 200px;
+}
+::placeholder {
+  font: inherit;
+  color: #e3e3e3;
+}
+ 

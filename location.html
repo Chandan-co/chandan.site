@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #location {
+            margin-top: 20px;
+            font-size: 18px;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Location Tracker</h2>
+        <button onclick="getLocation()">Get My Location</button>
+        <p id="location">Click the button to get your location.</p>
+    </div>
+
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError, { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 });
+            } else {
+                document.getElementById("location").innerText = "Geolocation is not supported by your browser.";
+            }
+        }
+
+        function showPosition(position) {
+            let latitude = position.coords.latitude;
+            let longitude = position.coords.longitude;
+            let accuracy = position.coords.accuracy;
+            let googleMapsLink = `https://www.google.com/maps?q=${latitude},${longitude}`;
+            document.getElementById("location").innerHTML = `
+                <strong>Latitude:</strong> ${latitude} <br>
+                <strong>Longitude:</strong> ${longitude} <br>
+                <strong>Accuracy:</strong> ${accuracy} meters <br>
+                <a href="${googleMapsLink}" target="_blank">View on Google Maps</a>
+            `;
+            console.log("Location fetched successfully: ", latitude, longitude);
+        }
+
+        function showError(error) {
+            let errorMessage = "";
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    errorMessage = "User denied the request for Geolocation. Please allow location access in browser settings.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    errorMessage = "Location information is unavailable. Please check your internet connection.";
+                    break;
+                case error.TIMEOUT:
+                    errorMessage = "The request to get user location timed out. Try again.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    errorMessage = "An unknown error occurred. Please refresh and try again.";
+                    break;
+            }
+            document.getElementById("location").innerText = errorMessage;
+            console.error("Geolocation Error: ", errorMessage);
+        }
+    </script>
+</body>
+</html>

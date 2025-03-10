@@ -1,100 +1,236 @@
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital@1&display=swap');
-*{
-    padding: 0;
-    margin: 0;
-    font-family: 'Bodoni Moda', serif;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+
+:root{
+    /**gradient color**/
+    --gradient-1: linear-gradient(to right bottom, hsl(299, 100%, 52%), hsl(291, 100%, 58%), hsl(283, 100%, 60%), hsl(273, 100%, 62%), hsl(262, 100%, 63%), hsl(242, 100%, 69%), hsl(223, 100%, 62%), hsl(210, 100%, 50%), hsl(203, 100%, 50%), hsl(198, 100%, 50%), hsl(192, 100%, 48%), hsl(185, 90%, 48%));
 }
-body{
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(/JAVASCRIPT/PICS/bday.gif.crdownload);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.container
+{
+    
+    display:inline-block;
+    justify-content: center;
+    
+    flex-wrap: wrap;
+    padding: 95px;
+    
 }
-.container{
-    perspective: 1000px;
+.container .box
+{
+    position: relative;
+    width: 450px;
+    height: 650px;
+    background:#e4e9f7;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
-.card{
-    width: 280px;
-    height: 360px;
+.container .box::before
+{
+    content: '';
     position: absolute;
-    top: 100px;
-    left: 230px;
-    transition: 2s;
-    transform-style: preserve-3d;
+    inset: -10px 50px;
+    border-top: 4px solid var(--clr);
+    border-bottom: 4px solid var(--clr);
+    z-index: -1;
+    transform: skewY(6deg);
+    transition: 0.5s ease-in-out;
 }
-.card:hover{
-    transform: rotateY(180deg);
+.container .box:hover::before
+{
+    transform: skewY(0deg);
+    inset: -10px 40px;
 }
-.block{
+.container .box::after
+{
+    content: '';
     position: absolute;
-    top:200px;
-    right: 600px;
-    perspective: 800px;
+    inset: 60px -10px;
+    border-left: 4px solid var(--clr);
+    border-right: 4px solid var(--clr);
+    z-index: -1;
+    transform: skew(6deg);
+    transition: 0.5s ease-in-out;
 }
-.outside,.inside{
+.container .box:hover::after
+{
+    transform: skew(0deg);
+    inset: 40px -10px;
+}
+.container .box .content
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 0 20px;
+    border-radius: 1rem;
     width: 100%;
     height: 100%;
-    border-radius: 20px;
-    text-align: center;
-    padding: 1.5rem;
+    overflow: hidden;
 }
-.outside{
-    background-color: blanchedalmond;
-    box-shadow: inset 0 5px 10px rgba(0,0,0,0.5);
-    position: absolute;
-    backface-visibility: hidden;
-}
-.outside h1{
-    font-size: 3rem;
-    font-weight: bold;
-    color: salmon;
-    margin-bottom: 30px;
-}
-.inside{
-    background-color: rgb(255, 244, 79);
-    box-shadow: inset 0 5px 10px rgba(0,0,0,0.5);
-    transform: rotateY(180deg);
-}
-.inside h3{
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-top: 20px;
-}
-.frames{
-    width: 400px;
-    height: 150px;
-    box-shadow: 0 5px 10px rgba(255, 255, 255, 0.5);
+.container .box .content .icon
+{
+    color: var(--clr);
+    width: 330px;
+    height: 300px;
+    box-shadow: 0 0 0 4px #2e2e2e,0 0 0 6px var(--clr);
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-around;
-    padding: 0 0.8rem;
+    border-radius: 2rem;
+    font-size: 2.5em;
+    transition: 0.5s ease-in-out;
+}
 
-    transform: rotateY(-230deg) rotateX(20deg);
-    position: absolute;
-}
-.frames img{
-    width: 125px;
-    height: 125px;
-    border-radius: 50%;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-}
-.frames p{
-   font-size: 20px;
-   font-weight: bold;
-   transform: rotateY(180deg);
-}
-.frames:nth-child(1)
+
+.container .box .content .icon1{
+    background:url("/JAVASCRIPT/PICS/quiz.png");
+    background-size: cover;
+    background-position: center;
+    
+    
+ }
+
+ .container .box .content .icon2{
+    background:url("/JAVASCRIPT/PICS/tictactoe.png");
+    background-size: cover;
+    background-position: center;
+ }
+
+ .container .box .content .icon3{
+    background:url("/JAVASCRIPT/PICS/age.png");
+    background-size: cover;
+    background-position: center;
+ }
+
+ .container .box .content .icon4{
+    background:url("/JAVASCRIPT/PICS/calcu.png");
+    background-size: cover;
+    background-position: center;
+    
+    
+ }
+
+ .container .box .content .icon5{
+    background:url("/JAVASCRIPT/PICS/memory\ \(2\).png");
+    background-size: cover;
+    background-position: center;
+    
+    
+ }
+ .container .box .content .icon6{
+    background:url("/JAVASCRIPT/PICS/snake.png");
+    background-size: cover;
+    background-position: center;
+    
+    
+ }
+
+.container .box:hover .content .icon1 
 {
-    top:-110px;
-    z-index: -1;
-    background-color: coral;
+    background:url("/JAVASCRIPT/PICS/quiz.png");
+    background-size: cover;
+    background-position: center;
+    color: #2e2e2e;
+    box-shadow: 0 0 0 4px #2e2e2e,0 0 0 300px var(--clr);
 }
-.frames:nth-child(2){
-    background-color: goldenrod;
-}
-.frames:nth-child(3)
+
+.container .box:hover .content .icon2 
 {
-    top:100px;
-    background-color: burlywood;
+    background:url("/JAVASCRIPT/PICS/tictactoe.png");
+    background-size: cover;
+    background-position: center;
+    color: #2e2e2e;
+    box-shadow: 0 0 0 4px #2e2e2e,0 0 0 300px var(--clr);
+}
+
+.container .box:hover .content .icon3 
+{
+    background:url("/JAVASCRIPT/PICS/age.png");
+    background-size: cover;
+    background-position: center;
+    color: #2e2e2e;
+    box-shadow: 0 0 0 4px #2e2e2e,0 0 0 300px var(--clr);
+}
+
+.container .box:hover .content .icon4 
+{
+    background:url("/JAVASCRIPT/PICS/calcu.png");
+    background-size: cover;
+    background-position: center;
+    color: #2e2e2e;
+    box-shadow: 0 0 0 4px #2e2e2e,0 0 0 300px var(--clr);
+}
+
+.container .box:hover .content .icon5 
+{
+    background:url("/JAVASCRIPT/PICS/memory\ \(2\).png");
+    background-size: cover;
+    background-position: center;
+    color: #2e2e2e;
+    box-shadow: 0 0 0 4px #2e2e2e,0 0 0 300px var(--clr);
+}
+
+.container .box:hover .content .icon6 
+{
+    background:url("/JAVASCRIPT/PICS/snake.png");
+    background-size: cover;
+    background-position: center;
+    color: #2e2e2e;
+    box-shadow: 0 0 0 4px #2e2e2e,0 0 0 300px var(--clr);
+}
+
+.container .box .content .text h3
+{
+    font-size: 1.5em;
+    color: #2e2e2e;
+    font-weight: 500;
+    transition: 0.5s ease-in-out;
+    text-transform: capitalize;
+}
+.container .box:hover .content .text h3
+{
+    color: #2e2e2e;
+    text-transform: capitalize;
+}
+.container .box .content .text p
+{
+    padding: 20px;
+    line-height: 1.5rem;
+    color: #999;
+    transition: 0.5s ease-in-out;
+    text-transform: capitalize;
+}
+.container .box:hover .content .text p
+{
+    color: #2e2e2e;
+    text-transform: capitalize;
+}
+.container .box .content .text a
+{
+    position: relative;
+    background: var(--clr);
+    color: #2e2e2e;
+    padding: 8px 15px;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 0.6rem;
+    font-weight: 500;
+    margin-top: 10px;
+    font-family: cursive;
+    transition: 0.5s ease-in-out;
+
+}
+.container .box:hover .content .text a
+{
+    background:#2e2e2e;
+    border-radius: 0.6rem;
+    color:white;
+    font-family: cursive;
 }

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 300px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 4px;
+            background: #28a745;
+            color: #fff;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:active {
+            background: #218838;
+        }
+        #timer {
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Countdown Timer</h1>
+        <input type="number" id="minutesInput" placeholder="Enter minutes...">
+        <button onclick="startCountdown()">Start</button>
+        <button onclick="resetCountdown()">Reset</button>
+        <div id="timer">00:00</div>
+    </div>
+    <audio id="alarmSound" src="sounds/alarm.mp3"></audio>
+    <script>
+        let countdown;
+        let minutes;
+        let seconds;
+        const timerDisplay = document.getElementById('timer');
+        const alarmSound = document.getElementById('alarmSound');
+
+        function updateCountdown() {
+            if (seconds === 0) {
+                if (minutes === 0) {
+                    clearInterval(countdown);
+                    alarmSound.play();
+                    return;
+                } else {
+                    minutes--;
+                    seconds = 59;
+                }
+            } else {
+                seconds--;
+            }
+            timerDisplay.textContent = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        }
+
+        function startCountdown() {
+            if (countdown) return;
+            minutes = parseInt(document.getElementById('minutesInput').value) || 0;
+            seconds = 0;
+            timerDisplay.textContent = `${minutes < 10 ? '0' : ''}${minutes}:00`;
+            countdown = setInterval(updateCountdown, 1000);
+        }
+
+        function resetCountdown() {
+            clearInterval(countdown);
+            countdown = null;
+            timerDisplay.textContent = '00:00';
+        }
+    </script>
+</body>
+</html>

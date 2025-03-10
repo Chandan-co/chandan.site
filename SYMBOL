@@ -26,3 +26,72 @@ circle-up:<i class="fa-regular fa-circle-up"></i>
 share:<i class="fa-solid fa-share"></i>
 thumbs-up:<i class="fa-regular fa-thumbs-up"></i>
 send/plane:<i class="fa-solid fa-paper-plane"></i>
+
+
+
+
+
+
+/**html about.html game links  old backup*/
+
+<div class="game">
+                <a href="/JAVASCRIPT/DOM/age_calculator.html"><p>AGE CALCULATOR</p></a>
+                <div id="age" class="game_img"><a href="/JAVASCRIPT/DOM/age_calculator.html"><img src="/JAVASCRIPT/PICS/age.png" alt="Age calculator_image"></a></div>
+              </div>
+              <div class="game">
+                <a href="/JAVASCRIPT/DOM/quiz.html"><p>QUIZ OPERATOR</p></a>
+                <div id="quiz" class="game_img"><a href="/JAVASCRIPT/DOM/quiz.html"><img src="/JAVASCRIPT/PICS/quiz.png" alt="quizgame_image"></a></div>
+              </div>
+              <div class="game">
+                <a href="/JAVASCRIPT/DOM/calculator.html"><p>CALCULATOR</p></a>
+                <div id="calculator" class="game_img"><a href="/JAVASCRIPT/DOM/calculator.html"><img src="/JAVASCRIPT/PICS/calcu.png" alt="Calculator_image"></a></div>
+              </div>
+
+
+
+/**game area html about.html  new*/
+
+<div class="game_area">
+
+                <div class="container">
+                  <div class="box" style="--clr:#89ec5b;">
+                      <div class="content">
+                          <div class="icon"></div>
+                          <div class="text">
+                              <h3>Designing</h3>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, qui.</p>
+                              <a href="#">Read More</a>
+                          </div>
+                      </div>
+              </div>
+            </div>
+
+             
+                <div class="container">
+                <div class="box" style="--clr:#eb5ae5;">
+                  <div class="content">
+                      <div class="icon"><ion-icon name="code-slash"></ion-icon></div>
+                      <div class="text">
+                          <h3>Development</h3>
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, qui.</p>
+                          <a href="#">Read More</a>
+                      </div>
+                  </div>
+              </div>
+            </div>
+
+
+            <div class="container">
+                <div class="box" style="--clr:#5b98eb;">
+                  <div class="content">
+                      <div class="icon"><ion-icon name="search"></ion-icon></div>
+                      <div class="text">
+                          <h3>SEO</h3>
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, qui.</p>
+                          <a href="#">Read More</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+              </div>
